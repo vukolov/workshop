@@ -8,6 +8,7 @@ result_pointer = c_void_p(result)
 # print(result_pointer)
 
 libc = CDLL(dll_name)
+libs.base64_encode.restype = c_wchar_p
 encoded_message = libc.base64_encode(
     c_wchar_p(input_message),
     c_int(len(input_message)),
